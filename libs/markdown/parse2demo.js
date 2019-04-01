@@ -10,6 +10,7 @@ const LANG = {
   'zh-CN': ['显示代码', '收起代码', '复制代码'],
   'en-US': ['Show Code', 'Hide Code', 'Copy Code']
 }
+
 class Demo extends Component {
   constructor (props) {
     super(props)
