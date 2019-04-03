@@ -1,13 +1,14 @@
 import React from 'react'
-import Header from './Component/Header'
+import { Classic as Page, History, Logo } from '@hi-ui/classic-theme'
 import { connect } from 'react-redux'
 import routes from './routes'
-import {Classic as Page, Logo, History} from '@hi-ui/classic-theme'
+import Header from './Component/Header'
 import locales from '../locales'
 import designs from '../pages/designs'
 import pages from '../pages/components'
 import templates from '../pages/templates'
-import {setDesignNavs, setComponentsNavs, setComponents} from '../redux/action/global'
+import { setComponents, setComponentsNavs, setDesignNavs } from '../redux/action/global'
+
 History.createHashHistory()
 
 const logo = <Logo
@@ -17,9 +18,11 @@ const logo = <Logo
   title='HIUI'
   alt='HIUI'
 />
+
 class Index extends React.Component {
   componentNavs = []
   designNavs = []
+
   constructor (props) {
     super(props)
     const _h = History.getHistory()
@@ -77,6 +80,7 @@ class Index extends React.Component {
       return parent
     })
   }
+
   getSiderItems (items) {
     const icons = [
       <span className='sider__icon-start' />,
@@ -87,7 +91,7 @@ class Index extends React.Component {
       <span className='sider__icon-changelog' />,
       <span className='sider__icon-component' />
     ]
-    const {locale} = this.props
+    const { locale } = this.props
     let components = []
     let navs = {}
     let siderDocuments = []
@@ -122,15 +126,17 @@ class Index extends React.Component {
       children: components
     }])
   }
+
   componentDidUpdate () {
     setComponentsNavs(this.componentNavs)
     setDesignNavs(this.designNavs)
   }
+
   getDesignTemplatesItems (items, path, callback) {
     let components = []
     let siderDocuments = []
     let navs = {}
-    const {locale} = this.props
+    const { locale } = this.props
     Object.keys(items.documents).forEach((title, i) => {
       const _title = locales[locale][path][title]
       navs[title] = _title
@@ -158,6 +164,7 @@ class Index extends React.Component {
     setDesignNavs(this.designNavs)
     return [].concat(siderDocuments, components)
   }
+
   render () {
     const siders = this.getSiderItems(pages)
     const _designs = this.getDesignTemplatesItems(designs, 'designs', setDesignNavs)

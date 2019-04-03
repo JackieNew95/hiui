@@ -7,9 +7,10 @@
     padding: 24px 0;
     font-size: 14px;
     color: #4284F5;
-    -moz-user-select:none;
-    -webkit-user-select:none;
-    user-select:none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
     &.none {
       display: none;
     }
@@ -19,6 +20,7 @@
     position: relative;
     float: left;
     padding-left: 18px;
+
     &:before {
       position: absolute;
       left: 3px;
@@ -30,8 +32,10 @@
       transform: translateY(-50%);
       transition: all .2s;
     }
+
     &:hover {
       color: #50a8f3;
+
       &:before {
         transform: translateX(3px) translateY(-50%);
         border-right-color: #4283f3;
@@ -44,6 +48,7 @@
     float: right;
     text-align: right;
     padding-right: 18px;
+
     &:before {
       content: '';
       position: absolute;
@@ -55,8 +60,10 @@
       border-left: 4px solid #4284F5;
       transition: all .2s;
     }
+
     &:hover {
       color: #50a8f3;
+
       &:before {
         transform: translateX(-3px) translateY(-50%);
         border-left-color: #4283f3;

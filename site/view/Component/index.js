@@ -32,6 +32,7 @@ class Component extends React.Component {
       this.getSiblingNav()
     })
   }
+
   hashChangeEvent () {
     let routes = window.location.hash.split('/')
     if (routes[2] !== 'docs') { return }
@@ -47,10 +48,10 @@ class Component extends React.Component {
     const anchors = anchorsDOMList.map((v, i) => {
       const id = 'component-anchors-' + i
       anchorsDOM[i].id = id
-      return {id, text: anchorsDOM[i].innerHTML}
+      return { id, text: anchorsDOM[i].innerHTML }
     })
 
-    this.setState({anchors})
+    this.setState({ anchors })
   }
 
   getSiblingNav () {
@@ -65,7 +66,7 @@ class Component extends React.Component {
       to: tempArr[index + 1],
       text: footNavs[tempArr[index + 1]] ? footNavs[tempArr[index + 1]] : ''
     }
-    this.setState({pre, next})
+    this.setState({ pre, next })
   }
 
   // 收集所有导航
@@ -74,7 +75,7 @@ class Component extends React.Component {
     let page = this.props.match.path.split('/')[2]
     footNavs = this.props[page] || {}
 
-    this.setState({footNavs, topNav: page}, fn)
+    this.setState({ footNavs, topNav: page }, fn)
   }
 
   getCurrentPage (fn) {

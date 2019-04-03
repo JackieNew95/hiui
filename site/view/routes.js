@@ -2,7 +2,7 @@ import React from 'react'
 
 import Home from './Home'
 import HomeEn from './Home/en-US'
-import {SiderLayout} from '@hi-ui/classic-theme'
+import { SiderLayout } from '@hi-ui/classic-theme'
 import Component from './Component'
 
 const loop = (locale, items, targets, component) => {
@@ -21,6 +21,7 @@ const loop = (locale, items, targets, component) => {
   })
   return targets
 }
+
 function getRoutes (locale, siders, designs, templates) {
   let sideArr = []
   let desArr = []

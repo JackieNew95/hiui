@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import {NavGroup} from '@hi-ui/classic-theme'
+import { NavGroup } from '@hi-ui/classic-theme'
 import LocaleDropdown from '../Dropdown/LocaleDropdown'
 import locales from '../../../locales'
+
 export default class NavHeader extends Component {
   render () {
-    const {locale, onLocaleChange} = this.props
-    const {home, components, template} = locales[locale].headers
+    const { locale, onLocaleChange } = this.props
+    const { home, components, template } = locales[locale].headers
     return <React.Fragment>
       <NavGroup position='right'>
         <NavGroup.Item>
@@ -25,7 +26,6 @@ export default class NavHeader extends Component {
         <NavGroup.Item>
           <LocaleDropdown changeDropdown={(val) => onLocaleChange(val)} />
         </NavGroup.Item>
-
       </NavGroup>
     </React.Fragment>
   }

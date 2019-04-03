@@ -5,7 +5,7 @@ import Button from '../../../components/button/Button'
 
 class Home extends React.Component {
   render () {
-    const {designContent, efficiencyContent, featureContent} = this.state
+    const { designContent, efficiencyContent, featureContent } = this.state
     return (
       <div className='page'>
         <div className='section section--intro'>

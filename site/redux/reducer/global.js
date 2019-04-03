@@ -18,17 +18,17 @@ export default (state = initState, action = '') => {
   } = action
   switch (type) {
     case 'GLOBAL_SIDER':
-      return Object.assign({}, state, {sider})
+      return Object.assign({}, state, { sider })
     case 'SET_THEME':
-      return Object.assign({}, state, {theme})
+      return Object.assign({}, state, { theme })
     case 'SET_LOCALE':
-      return Object.assign({}, state, {locale})
+      return Object.assign({}, state, { locale })
     case 'SET_DESIGNNAVS':
-      return Object.assign({}, state, {designNavs})
+      return Object.assign({}, state, { designNavs })
     case 'SET_COMPONENTSNAVS':
-      return Object.assign({}, state, {componentsNavs})
+      return Object.assign({}, state, { componentsNavs })
     case 'SET_COMPONENTS':
-      return Object.assign({}, state, {components})
+      return Object.assign({}, state, { components })
     default:
       return Object.assign({}, state)
   }

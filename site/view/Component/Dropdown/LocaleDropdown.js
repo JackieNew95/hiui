@@ -11,7 +11,7 @@ class LocaleDropdown extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      list: [{title: '中文'}, {title: 'English'}],
+      list: [{ title: '中文' }, { title: 'English' }],
       title: localesLabel[locales.indexOf(this.props.locale || 0)],
       isShowList: false
     }
@@ -54,7 +54,7 @@ class LocaleDropdown extends React.Component {
         onMouseEnter={this.toggleDropdown.bind(this, true)}
         onMouseLeave={this.toggleDropdown.bind(this, false)}
       >
-        <a className='hi-demo__title' >
+        <a className='hi-demo__title'>
           <span className='hi-demo__text'>{title}</span>
           <i className='hi-icon icon-down' />
         </a>
