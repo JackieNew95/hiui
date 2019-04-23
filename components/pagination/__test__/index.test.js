@@ -1,6 +1,6 @@
 import React from 'react'
 import TestUtils from 'react-dom/test-utils'
-import { mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
 import Pagination from '../'
 import Dropdown from '../../dropdown'
@@ -69,7 +69,7 @@ describe('Pagination', () => {
         total={250}
         jumpEvent={jumpCallback}
         pageSize={30}
-        onChange={(page, prevPage, pageSize) => { console.log(page, prevPage, pageSize) }}
+        onChange={pageChangeCallback}
       />
     )
 
@@ -100,7 +100,7 @@ describe('Pagination', () => {
         total={250}
         jumpEvent={jumpCallback}
         pageSize={30}
-        onChange={(page, prevPage, pageSize) => { console.log(page, prevPage, pageSize) }}
+        onChange={pageChangeCallback}
       />
     )
 
@@ -113,5 +113,19 @@ describe('Pagination', () => {
     wrapper.find('input').simulate('blur')
     expect(wrapper.find('input').props().value).toEqual(9)
     expect(jumpCallback.mock.results[1].value).toBe(9)
+  })
+
+  it('set defaultCurrent', () => {
+    const wrapper = mount(
+      <Pagination
+        defaultCurrent={2}
+        total={250}
+        pageSize={30}
+        onChange={pageChangeCallback}
+      />
+    )
+    expect(wrapper.find('.hi-pagination__item--active').text()).toEqual('2')
+    wrapper.setProps({defaultCurrent: 3})
+    expect(wrapper.find('.hi-pagination__item--active').text()).toEqual('3')
   })
 })

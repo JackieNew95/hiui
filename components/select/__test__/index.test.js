@@ -204,10 +204,10 @@ describe('Select', () => {
     document.querySelectorAll('.hi-select__dropdown--item')[1].click() // 取消选择第二项
     expect(changeCallback.mock.results[2].value).toHaveLength(3)
 
-    wrapper.find('input').simulate('change', { target: { value: '0' } }) // 测试搜索
+    wrapper.find('input').simulate('input', { target: { value: 'something' } }) // 测试搜索
     expect(document.querySelectorAll('.hi-select__dropdown-item--empty')).toHaveLength(1) // 无搜索结果
     wrapper.find('input').simulate('change', { target: { value: '1' } })
-    expect(document.querySelectorAll('.hi-select__dropdown--item')).toHaveLength(1)
+    expect(document.querySelectorAll('.hi-select__dropdown--item')).toHaveLength(2)
     document.querySelectorAll('.hi-select__dropdown--item')[0].click()
     expect(changeCallback.mock.results[3].value).toHaveLength(4)
   })

@@ -13,16 +13,19 @@ constructor () {
   super()
 
   this.state = {
-    current: 1
+    current: 1,
+    total: 100,
+    pageSize: 10
   }
 }
+
 render() {
   return (
     <div>
       <Pagination
         defaultCurrent={this.state.current}
-        total={150}
-        pageSize={30} 
+        total={this.state.total}
+        pageSize={this.state.pageSize} 
         onChange={(page, prevPage, pageSize)=>{console.log(page, prevPage, pageSize)}}
       />
     </div>

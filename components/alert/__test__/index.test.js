@@ -29,7 +29,6 @@ describe('Alert', () => {
     )
     wrapper.find('.close-btn').simulate('click')
     expect(onClose).toBeCalled()
-    console.log(wrapper.find('.hi-alert'))
     expect(wrapper.find('.hi-alert')).toHaveLength(0)
   })
 
@@ -53,7 +52,6 @@ describe('Alert', () => {
     jest.runAllTimers()
     expect(onClose).toBeCalled()
     // expect(onClose).toHaveBeenCalledTimes(1)
-    console.dir(wrapper.find('.hi-alert'))
     // expect(wrapper.find('.hi-alert')).toHaveLength(0)
     // expect(wrapper.find('.hi-alert').exists()).toBeTruthy()
   })
